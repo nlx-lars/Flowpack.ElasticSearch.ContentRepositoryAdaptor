@@ -60,7 +60,8 @@ class AbstractDriverSpecificObjectFactory
         if (!isset($this->mapping[$version][$type]['arguments'])) {
             return new $className();
         }
+        $reflectionClass = new \ReflectionClass($className);
 
-        return new $className(...array_values($this->mapping[$version][$type]['arguments']));
+        return $reflectionClass->newInstanceArgs(array_values($this->mapping[$version][$type]['arguments']));
     }
 }
