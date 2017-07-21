@@ -40,7 +40,7 @@ use TYPO3\TYPO3CR\Search\Indexer\BulkNodeIndexerInterface;
 class NodeIndexer extends AbstractNodeIndexer implements BulkNodeIndexerInterface
 {
     /**
-     * @Flow\Inject
+     * @Flow\Inject(lazy=false)
      * @var NodeTypeMappingBuilderInterface
      */
     protected $nodeTypeMappingBuilder;
